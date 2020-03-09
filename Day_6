@@ -1,0 +1,18 @@
+#day 6:
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(0, n):
+        try:
+            string = str(input())
+        except: pass
+        output1 = str()
+        output2 = str()
+        for i in range(len(string)):
+            if i % 2 == 0:
+                output1 += string[i]
+            else:
+                output2 += string[i]
+        print(output1, output2)
