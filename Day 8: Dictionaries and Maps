@@ -1,0 +1,16 @@
+num = int(input())
+
+phonebook = {}
+
+for i in range(num):
+    entry = str(input()).split(" ")
+    name = entry[0]
+    number = entry[1]
+    phonebook[name] = number
+
+for i in range(num, num+num):
+    entry = str(input())
+    try:
+        print(entry, "=", phonebook[entry], sep = "")
+    except KeyError:
+        print("Not found")
