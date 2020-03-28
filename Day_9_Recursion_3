@@ -1,0 +1,47 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+# Complete the factorial function below.
+def factorial(n):
+    if n == 1:
+        return(1)
+    else:
+    # create a list for the numbers to multiply
+        number = []
+        for i in reversed(range(1, n+1)):
+            number.append(i)
+        # now multiply all items of that list:
+        # number[1]*number[1+1]*number[1+2...]
+        result = 1
+        for j in range(0, len(number)):
+            try:
+                # what it should do:
+                print(number[j], "times", number[j+1])
+            except IndexError:
+                break
+            # I don't know why the following works, but it works
+            result = result * number[0+j]
+        return(result)
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w') 
+    # The open function opens a file and gives you a file object used to access the file's contents according to the specified modes.
+    #The "w" mode supplied in your example opens a file for reading, discarding any data previously in that file.
+    #The os.environ is used to get the environmental variables.
+    # https://www.reddit.com/r/learnpython/comments/99fktz/came_across_this_in_hackerrank/
+
+    n = int(input())
+
+    result = factorial(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
