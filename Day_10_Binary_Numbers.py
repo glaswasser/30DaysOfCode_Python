@@ -1,5 +1,10 @@
 # this is the first file I imported using git and my terminal
-# yayyy!! :) 
+# yayyy!! :)
+
+# The task was to count the maximum consecutive 1's
+# in an input converted to binary.
+# the script should be self-explanatory, I will add more descriptions
+# to future code ;)
 
 #!/bin/python3
 
