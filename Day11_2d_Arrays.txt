@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    arr = []
+
+    # get the symbols as stripped strings
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    # init a hourglass sum which is infinitely small
+    hourglass = -math.inf
+    # create hourglass sums
+    for i in range(4):
+        for j in range(4):
+            hourglassnew = arr[i][j]+arr[i][1+j]+arr[i][2+j]+arr[i+1][1+j]+arr[i+2][0+j]+arr[i+2][1+j]+arr[i+2][2+j]
+            # if the hourglass sum is greater than the previous one, add it
+            if hourglassnew > hourglass:
+                hourglass = hourglassnew
+
+print(hourglass) # print result
