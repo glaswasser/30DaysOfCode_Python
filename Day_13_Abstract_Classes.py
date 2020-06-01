@@ -13,7 +13,8 @@ class Book(object, metaclass=ABCMeta): # create class
         self.title=title # assign title to title
         self.author=author # assign author to author
     @abstractmethod
-    def display(): pass
+    def display(): pass # this means that we HAVE TO implement a display method
+    # into the subclass MyBook
 
 # this code is new:
 #Write MyBook class
